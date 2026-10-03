@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Login - Survive the Philippines War</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  <main>
+    <img class="logo" src="/img/logo.png" alt="Survive the Philippines War">
+
+    <form class="menu auth" method="POST" action="/login">
+      <h2>Login</h2>
+
+      <% if (typeof error !== 'undefined' && error) { %>
+        <p class="err"><%= error %></p>
+      <% } %>
+
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        autocomplete="username"
+        autocapitalize="none"
+        autocorrect="off"
+        spellcheck="false"
+        required
+        autofocus
+      >
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit" class="on">Login</button>
+
+      <p class="alt">
+        No account yet?
+        <a href="/register">Register</a>
+      </p>
+    </form>
+  </main>
+</body>
+</html>

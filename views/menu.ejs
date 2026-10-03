@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Survive the Philippines War</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
+  <link rel="stylesheet" href="/css/menu.css">
+</head>
+<body>
+  <main>
+    <form class="logout" method="post" action="/logout">
+      <button type="submit">Logout (<%= username %>)</button>
+    </form>
+
+  
+
+    <div class="menu" id="menu">
+      <button type="button">Start Game</button>
+      <button type="button">New Game</button>
+      <button type="button">Load Game</button>
+      <button type="button">Survival</button>
+      <button type="button">Character Selection</button>
+      <button type="button">Weapons Arsenal</button>
+      <button type="button">Training</button>
+      <button type="button">Settings</button>
+      
+    </div>
+  </main>
+
+  <script>
+    document.getElementById('menu').addEventListener('click', function (e) {
+      var b = e.target.closest('button');
+      if (!b) return;
+      document.querySelectorAll('#menu button').forEach(function (x) {
+        x.classList.toggle('on', x === b);
+      });
+    });
+  </script>
+</body>
+</html>

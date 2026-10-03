@@ -1,0 +1,39 @@
+/* menu.css – loads AFTER style.css. Puts the 9 buttons in a yellow box on the LEFT side. */
+
+/* The yellow box */
+.menu#menu {
+    align-self: flex-start;          /* phone: box sits on the left */
+    width: 100%;
+    max-width: 340px;
+    padding: 14px;
+    background: rgba(18, 16, 13, 0.92);
+    border: 3px solid var(--amber);
+    box-shadow:
+      0 0 0 1px #000,
+      0 0 18px rgba(217, 164, 65, 0.35),
+      0 8px 30px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* Laptop / desktop: box on the left, logo in the middle of the rest */
+  @media (min-width: 760px) {
+    main {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 24px 4vw;
+    }
+  
+    .menu#menu {
+      order: -1;                     /* menu first = left side */
+      flex: none;
+      align-self: center;
+      width: clamp(280px, 26vw, 360px);
+      max-width: none;
+    }
+  
+    .logo {
+      width: min(46vw, 72vh, 560px);
+      max-width: none;
+      margin: 0 auto;                /* centers the logo in the space right of the menu */
+    }
+  }

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Create account – Survive the Philippines War</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+  <main>
+    <img class="logo" alt="Survive the Philippines War" src="/img/logo.png">
+
+    <form class="menu auth" method="post" action="/register">
+      <h2>Register</h2>
+
+      <% if (typeof error !== 'undefined' && error) { %>
+        <p class="err"><%= error %></p>
+      <% } %>
+
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        autocomplete="username"
+        autocapitalize="none"
+        autocorrect="off"
+        spellcheck="false"
+        minlength="3"
+        maxlength="20"
+        required
+        autofocus
+      >
+
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        autocomplete="new-password"
+        minlength="6"
+        required
+      >
+
+      <button type="submit" class="on">Create Account</button>
+
+      <p class="alt">
+        Already have one?
+        <a href="/login">Login</a>
+      </p>
+    </form>
+  </main>
+</body>
+</html>
